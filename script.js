@@ -1,19 +1,28 @@
+
+// Used moment to generate clock tracking month day and year
 $("#currentDay").text(moment().format('dddd, MMM Do YYYY'));
 
-
+// Confirms document is ready upon load
 $(document).ready(function () {
 
+//Save button for items
     $(".saveBtn").on("click", function () {
         var text = $(this).siblings(".description").val();
         var time = $(this).parent().attr("id");
 
+        //Sets local storage items
         localStorage.setItem(time, text);
     })
 
 
 
-    
-    }
+    function keepTrack() {
+        var currentTime = moment().hour();
+
+
+     
+
+    //Getting item from local storage
     $("#hour-9 .description").val(localStorage.getItem("hour-9"));
     $("#hour-10 .description").val(localStorage.getItem("hour-10"));
     $("#hour-11 .description").val(localStorage.getItem("hour-11"));
