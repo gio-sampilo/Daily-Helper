@@ -6,5 +6,5 @@
 
 *URL: https://gio-sampilo.github.io/Daily-Helper/
 
-
+![Home page](./assets/Daily-Helper.PNG)
 
