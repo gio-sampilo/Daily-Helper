@@ -15,12 +15,33 @@ $(document).ready(function () {
     })
 
 
-
+//Confirms time and sets corresponding container background
     function keepTrack() {
         var currentTime = moment().hour();
 
 
-     
+        $(".time-block").each(function () {
+            var timeBlock = parseInt($(this).attr("id").split("hour")[1]);
+
+            
+            if (timeBlock < currentTime) {
+                // $(this).removeClass("future");
+                // $(this).removeClass("present");
+                $(this).addClass("past");
+            }
+            else if (timeBlock > currentTime) {
+                // $(this).removeClass("past");
+                // $(this).removeClass("future");
+                $(this).addClass("future");
+            }
+            else {
+                // $(this).removeClass("present");
+                // $(this).removeClass("past");
+                $(this).addClass("present");
+
+            }
+        })
+    }
 
     //Getting item from local storage
     $("#hour-9 .description").val(localStorage.getItem("hour-9"));
